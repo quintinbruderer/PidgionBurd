@@ -14,14 +14,33 @@ Menu.prototype = {
 
     this.titleGroup = this.game.add.group();
     this.titleChildren = [];
-    this.title = this.game.add.sprite(this.game.width/2,this.game.height/3,'title');
+
+    this.title = this.game.add.sprite(0,0,'title');
     this.title.anchor.setTo(0.5);
-    this.bird = this.game.add.sprite(this.game.width/2, this.game.height/2, 'bird')
-    this.bird.anchor.x = 0.5;
+
+    this.bird = this.game.add.sprite(0, 30, 'bird')
+    this.bird.anchor.x = .5;
+    // this.bird = this.game.add.sprite(-20, 50, 'bird')
+    // this.bird.anchor.x = 1;
+    this.bird.animations.add('flap');
+    this.bird.animations.play('flap', 12, true);
+    //animations keyname, framerate, loop
+
     this.titleChildren.push(this.title,this.bird);
     this.titleGroup.addMultiple(this.titleChildren);
-    
+
+    this.titleGroup.x = this.game.width/2;
+    this.titleGroup.y = this.game.width/2;
+    this.game.add.tween(this.titleGroup).to({y:150}, 350, Phaser.Easing.Linear.NONE, true, 0, 1000, true);
+    //I do not understand this line too well.
+    this.startButton = this.game.add.button(this.game.width/2, this.game.height/1.75, 'startButton', this.startPress, this);
+    this.startButton.anchor.setTo(0.5);
   },
+  startPress: function() {
+    this.game.state.start('play');
+    console.log('fired')
+  },
+
   update: function() {
 
   }
