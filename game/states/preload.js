@@ -3,11 +3,13 @@
 function Preload() {
   this.asset = null;
   this.ready = false;
+  console.log("preload.js line 7, remember due to game.js, each console log should have info of where it is at, or else it could be a bitch to find")
 }
 
 Preload.prototype = {
   preload: function() {
-    this.asset = this.add.sprite(this.width/2,this.height/2, 'preloader');
+    this.asset = this.add.sprite(this.game.width/2,this.game.height/2, 'preloader');
+    //have some fun here...maybe rolling pokeballs
     this.asset.anchor.setTo(0.5, 0.5);
 
     this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
@@ -17,7 +19,7 @@ Preload.prototype = {
     this.load.image('ground', 'assets/ground.png');
     this.load.image('title', 'assets/title.png');
     this.load.image('startButton', 'assets/start-button.png')
-    //this.load.spritesheet(key, url, frameWidth, frameHeight, numberOfFrames);  
+    //this.load.spritesheet(key, url, frameWidth, frameHeight, numberOfFrames);
     this.load.spritesheet('bird', 'assets/bird.png', 34, 24, 3);
   },
   create: function() {
