@@ -10,7 +10,7 @@ Preload.prototype = {
   preload: function() {
     this.asset = this.add.sprite(this.game.width/2,this.game.height/2, 'preloader');
     //have some fun here...maybe rolling pokeballs
-    this.asset.anchor.setTo(0.5, 0.5);
+    this.asset.anchor.setTo(0.5);
 
     this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
     this.load.setPreloadSprite(this.asset);
@@ -20,10 +20,14 @@ Preload.prototype = {
     this.load.image('title', 'assets/title.png');
     this.load.image('startButton', 'assets/start-button.png');
     this.load.image('instructions', 'assets/instructions.png');
-    this.load.image('getReady', 'assets/get-ready.png')
+    this.load.image('getReady', 'assets/get-ready.png');
+    this.load.image('scoreboard', 'assets/scoreboard.png');
+    this.load.image('gameover', 'assets/gameover.png');
+    this.load.image('particle', 'assets/particle.png');
     //this.load.spritesheet(key, url, frameWidth, frameHeight, numberOfFrames);
     this.load.spritesheet('bird', 'assets/bird.png', 34, 24, 3);
     this.load.spritesheet('pipe', 'assets/pipes.png', 54, 320, 2);
+    this.load.spritesheet('medals', 'assets/medals.png', 44, 46, 2);
 
     this.load.audio('score', 'assets/score.wav');
     this.load.audio('flap', 'assets/flap.wav');

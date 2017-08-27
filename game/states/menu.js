@@ -10,14 +10,14 @@ Menu.prototype = {
     this.background = this.game.add.sprite(0, 0, 'background');
     this.ground = this.game.add.tileSprite(0, 400, 335, 112, 'ground')
     //x and y placement, then the "view box" of the sprite, in this case is the size of the sprite itself of 335 and 112. The sprite is called from the preload ground
-    this.ground.autoScroll(-150,0);
+    this.ground.autoScroll(-200,0);
 
     this.titleGroup = this.game.add.group();
     this.title = this.game.add.sprite(0,0,'title');
     this.title.anchor.setTo(0.5);
 
     this.bird = this.game.add.sprite(0, 30, 'bird')
-    this.bird.anchor.x = .5;
+    this.bird.anchor.x = 0.5;
     // this.bird = this.game.add.sprite(-20, 50, 'bird')
     // this.bird.anchor.x = 1;
     this.bird.animations.add('flap');
@@ -35,7 +35,6 @@ Menu.prototype = {
   },
   startPress: function() {
     this.game.state.start('play');
-    console.log('fired')
   },
 
   update: function() {
