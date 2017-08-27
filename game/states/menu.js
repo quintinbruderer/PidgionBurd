@@ -13,8 +13,6 @@ Menu.prototype = {
     this.ground.autoScroll(-150,0);
 
     this.titleGroup = this.game.add.group();
-    this.titleChildren = [];
-
     this.title = this.game.add.sprite(0,0,'title');
     this.title.anchor.setTo(0.5);
 
@@ -26,8 +24,7 @@ Menu.prototype = {
     this.bird.animations.play('flap', 12, true);
     //animations keyname, framerate, loop
 
-    this.titleChildren.push(this.title,this.bird);
-    this.titleGroup.addMultiple(this.titleChildren);
+    this.titleGroup.addMultiple([this.title, this.bird]);
 
     this.titleGroup.x = this.game.width/2;
     this.titleGroup.y = this.game.width/2;
