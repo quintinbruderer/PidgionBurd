@@ -8,7 +8,10 @@ var Bird = function(game, x, y, frame) {
   this.animations.add('flap');
   this.animations.play('flap', 12, true);
   this.game.physics.arcade.enableBody(this);
-  this.body.bounce.setTo(0,.8)
+  this.body.bounce.setTo(0,.8);
+
+  this.checkWorldBounds = true;
+  this.outOfBoundsKill = true;
 };
 
 Bird.prototype = Object.create(Phaser.Sprite.prototype);
