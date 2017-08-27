@@ -22,8 +22,8 @@ Bird.prototype.update = function() {
   }
 };
 Bird.prototype.flap = function(pointer, doubleTap) {
-  this.body.velocity.y = -375;
-  this.game.add.tween(this).to({angle: -40}, 100).start();
+  this.body.velocity.y = -425;
+  this.game.add.tween(this).to({angle: -55}, 200).start();
   console.log(pointer, doubleTap)
 }
 
