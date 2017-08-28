@@ -2,11 +2,16 @@
 
 //global variables
 window.onload = function () {
-  var game = new Phaser.Game(<%= gameWidth %>, <%= gameHeight %>, Phaser.AUTO, '<%= _.slugify(projectName) %>');
+  var game = new Phaser.Game(<%= gameWidth %>, <%= gameHeight %>, Phaser.AUTO, '<%= _.slugify(projectName) %>', {preload: preload, create: create});
 
   // Game States
-  <% _.forEach(gameStates, function(gameState) {  %>game.state.add('<%= gameState.shortName %>', require('./states/<%= gameState.shortName %>'));
+  function preload () {
+    <% _.forEach(gameStates, function(gameState) {  %>game.state.add('<%= gameState.shortName %>', require('./states/<%= gameState.shortName %>'));
   <% }); %>
+  }
 
-  game.state.start('boot');
+  function create() {
+    console.log(game.scale)
+    game.state.start('boot');
+  }
 };
