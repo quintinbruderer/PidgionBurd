@@ -38,7 +38,6 @@ Bird.prototype.update = function() {
   }
   switch (this.hitPipe) {
     case true:
-      console.log(this.x)
       this.birdTweenPipe.start()
       this.roll = false;
       break;
@@ -51,11 +50,12 @@ Bird.prototype.update = function() {
   }
 };
 
-Bird.prototype.flap = function() {
+Bird.prototype.flap = function(point, doubletap) {
   if(!!this.alive) {
     this.flapSound.play();
     this.body.velocity.y = -400;
     this.game.add.tween(this).to({angle: -40}, 100).start();
+    console.log('flap in bird click stuff', point, doubletap)
   }
 };
 
