@@ -13,6 +13,11 @@ Play.prototype = {
     //tweak this.
 
     this.background = this.game.add.sprite(0, 0, 'background');
+    this.buildings = this.game.add.tileSprite(0, 234, 360, 92, 'buildings');
+    this.trees = this.game.add.tileSprite(0,310, 336, 90, 'trees');
+    this.buildings.autoScroll(-40,0);
+    this.trees.autoScroll(-100, 0);
+
 
     this.score = 0;
     this.scoreText = this.game.add.bitmapText(this.game.width/2, 10, 'flappyfont', this.score.toString(), 24);

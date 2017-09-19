@@ -1,7 +1,7 @@
 'use strict';
 
-var Bird = function(game, x, y, frame) {
-  Phaser.Sprite.call(this, game, x, y, 'bird', frame);
+var Bird = function(game, x, y) {
+  Phaser.Sprite.call(this, game, x, y, 'bird');
 
   // initialize your prefab here
   this.anchor.setTo(.5);

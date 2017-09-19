@@ -52,11 +52,19 @@ Scoreboard.prototype.show = function (score) {
   }
   this.bestScoreText.setText(bestScore.toString());
 
-  if (score >= 10 && score < 20) {
+  if (score >= 10 && score < 15) {
+    medal = this.game.add.sprite(-65, 7, 'medals', 3);
+    medal.anchor.setTo(0.5);
+    this.scoreboard.addChild(medal);
+  } else if (score >= 15 && score < 20) {
+    medal = this.game.add.sprite(-65, 7, 'medals', 2);
+    medal.anchor.setTo(0.5);
+    this.scoreboard.addChild(medal);
+  } else if (score >= 20 && score < 30) {
     medal = this.game.add.sprite(-65, 7, 'medals', 1);
     medal.anchor.setTo(0.5);
     this.scoreboard.addChild(medal);
-  } else if (score >= 20) {
+  } else if (score >= 30) {
     medal = this.game.add.sprite(-65, 7, 'medals', 0);
     medal.anchor.setTo(0.5);
     this.scoreboard.addChild(medal);

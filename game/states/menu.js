@@ -8,9 +8,13 @@ Menu.prototype = {
   },
   create: function() {
     this.background = this.game.add.sprite(0, 0, 'background');
-    this.ground = this.game.add.tileSprite(0, 400, 335, 112, 'ground')
-    //x and y placement, then the "view box" of the sprite, in this case is the size of the sprite itself of 335 and 112. The sprite is called from the preload ground
-    this.ground.autoScroll(-200,0);
+    this.buildings = this.game.add.tileSprite(0, 234, 360, 92, 'buildings');
+    this.trees = this.game.add.tileSprite(0,310, 336, 90, 'trees');
+    this.ground = this.game.add.tileSprite(0, 400, 480, 165, 'ground');
+    //x and y placement, then the "view box" of the sprite, in this case is the size of the sprite itself of 480 and 165. The sprite is called from the preload ground
+    this.ground.autoScroll(-200, 0);
+    this.trees.autoScroll(-100, 0);
+    this.buildings.autoScroll(-40,0);
 
     this.titleGroup = this.game.add.group();
     this.title = this.game.add.sprite(0,0,'title');

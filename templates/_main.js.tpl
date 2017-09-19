@@ -30,7 +30,7 @@ window.onload = function () {
     game.scale.pageAlignHorizontally = true;
     game.scale.pageAlignVertically = true;
     //game.scale.forcePortrait = true;
-    //game.stage.smoothed = false;
+    game.stage.smoothed = false;
     //console.log("in the create function of main", game.scale.pageAlignVertically, game.scale.scaleMode)
     console.log("scale works somewhat. CSS styling removed")
     game.state.start('boot');
